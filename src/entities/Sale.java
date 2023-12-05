@@ -6,9 +6,9 @@ public class Sale {
 	private String seller;
 	private Integer items;
 	private Double total;
-	
+
 	public Sale() {
-		
+
 	}
 
 	public Sale(Integer month, Integer year, String seller, Integer items, Double total) {
@@ -58,6 +58,17 @@ public class Sale {
 	public void setTotal(Double total) {
 		this.total = total;
 	}
+
+	public Double averagePrice() {
+		return getTotal() / getItems();
+	}
+
 	
+	@Override
+	public String toString() {
+
+		return month + "/" + "" + year + ", " + "" + seller + ", " + " " + items + "," + " " + total + "," + " "
+				+ String.format("pm = %.2f", averagePrice());
+	}
 	
 }
